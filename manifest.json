@@ -2,12 +2,13 @@
   "name": "Chrome Session Tracker",
   "description": "Base Level Extension",
   "version": "1.0",
-  "manifest_version": 3,
-  "permissions": ["storage","alarms"],
+  "manifest_version": 2,
+  "permissions": ["storage", "alarms"],
   "background": {
-    "service_worker":"background.js"
+    "scripts": ["background.js"],
+    "persistent": true
   },
-  "action": {
+  "browser_action": {
     "default_popup": "timer.html",
     "default_icon": "clock.png"
   }
