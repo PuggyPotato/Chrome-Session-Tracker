@@ -1,8 +1,12 @@
 {
-  "name": "Hello Extensions",
+  "name": "Chrome Session Tracker",
   "description": "Base Level Extension",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["storage","alarms"],
+  "background": {
+    "service_worker":"background.js"
+  },
   "action": {
     "default_popup": "timer.html",
     "default_icon": "clock.png"

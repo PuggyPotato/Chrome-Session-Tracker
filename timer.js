@@ -1,16 +1,17 @@
 let timeSecond = document.getElementById("time-second");
-let i = 0;
 let timeMinute = document.getElementById("time-min");
-let x = 0;
 let text = document.getElementById("text");
 
+function updateUI(seconds, minutes) {
+  timeSecond.innerHTML = String(seconds).padStart(2, "0");
+  timeMinute.innerHTML = String(minutes).padStart(2, "0");
+  text.innerHTML = `You Have Been Using Chrome for ${minutes} Minute and ${seconds} Second This Session`;
+}
+
 setInterval(() => {
-    i++;
-    if(i >=60){
-        i = 0;
-        x +=1;
-        timeMinute.innerHTML = String(x).padStart(2,"0")
-    }
-    timeSecond.innerHTML = String(i).padStart(2,"0");
-    text.innerHTML = "You Have Been Using Chrome for " + x + " Minute and " + i + " Second This Session"
+  chrome.storage.local.get(["seconds", "minutes"], (result) => {
+    const second = result.seconds ?? 0;
+    const minute = result.minutes ?? 0;
+    updateUI(second, minute);
+  });
 }, 1000);
