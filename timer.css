@@ -1,4 +1,34 @@
-.container{
-    display: flex;
-    align-items: center;
-}
+body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-width: 250px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .time {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 0 5px;
+      color: #007BFF;
+    }
+
+    #text {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    #colon {
+      font-size: 48px;
+      color: #000;
+    }
